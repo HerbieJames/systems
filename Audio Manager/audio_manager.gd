@@ -12,28 +12,20 @@ func remove_sound(instance: AudioStreamPlayer) -> void:
 	instance.queue_free()
 
 
-## Start a sound by it's key that destroys itself when finished.
-func play_sound(sound: String, db : float = 0, group : String = "") -> void:
+## Play a sound by it's key. Returns the instance node.
+func create_sound(sound: String, loops : bool = false, db : float = 0) -> AudioStreamPlayer:
 	var instance = AudioStreamPlayer.new()
-	instance.stream = drones[sound]
+	if loops:
+		instance.stream = drones[sound]
+		instance.finished.connect(instance.play)
+	else:
+		instance.stream = sounds[sound]
+		instance.finished.connect(remove_sound.bind(instance))
 	instance.volume_db = db
-	instance.finished.connect(remove_sound.bind(instance))
 	add_child(instance)
-	if group: instance.add_to_group("audio_" + group)
 	instance.play()
-
-
-## Start sound by it's key that is intended to loop until terminated elsewhere.
-func play_drone(sound: String, db : float = 0, group : String = "") -> void:
-	var instance = AudioStreamPlayer.new()
-	instance.stream = sounds[sound]
-	instance.volume_db = db
-	instance.finished.connect(instance.play)
-	instance.name = sound
-	add_child(instance)
-	instance.add_to_group("audio")
-	if group: instance.add_to_group("audio_" + group)
-	instance.play()
+	print(sound)
+	return instance
 
 
 ## Return a sound from the AudioManager by it's name.
