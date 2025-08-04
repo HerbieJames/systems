@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://uk12b2hag22a"]
+
+[ext_resource type="Script" uid="uid://dex1i1km1jwek" path="res://Audio Manager/audio_manager.gd" id="1_7nrl6"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vrfk1"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_u3jmw"]
+
+[sub_resource type="AudioStream" id="AudioStream_7nrl6"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_7nrl6")
+sounds = Dictionary[String, AudioStream]({
+"\"ding\"": SubResource("AudioStreamRandomizer_vrfk1"),
+"\"pow\"": SubResource("AudioStreamRandomizer_u3jmw")
+})
+drones = Dictionary[String, AudioStream]({
+"\"space_warble\"": SubResource("AudioStream_7nrl6")
+})
