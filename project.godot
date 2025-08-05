@@ -17,7 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalAudio="*res://Audio Manager/GlobalAudio.tscn"
+GlobalAudio="*res://Global Audio/GlobalAudio.tscn"
+GlobalUI="*res://Global UI/GlobalUI.tscn"
+GlobalDialogue="*res://Global Dialogue/GlobalDialogue.tscn"
 
 [display]
 

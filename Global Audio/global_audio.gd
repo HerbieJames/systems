@@ -3,6 +3,7 @@ extends Node
 
 ## For assigning keys to sounds.
 @export var sound_data : Dictionary[String, AudioStream]
+## For accessing all sounds of the same key by said key.
 @onready var audio_stream_players : Dictionary[String, Array]
 
 

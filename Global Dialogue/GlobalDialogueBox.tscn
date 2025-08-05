@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4mynan87lajo"]
+
+[ext_resource type="Script" uid="uid://c4yjlxpxfup7d" path="res://Global Dialogue/global_dialogue_box.gd" id="1_thd6a"]
+
+[node name="GlobalDialogueBox" type="MarginContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+script = ExtResource("1_thd6a")
+
+[node name="letter-display" type="Timer" parent="."]
+one_shot = true
+
+[node name="hold-display" type="Timer" parent="."]
+one_shot = true
+
+[node name="box" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="margin-for-text" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="text" type="Label" parent="margin-for-text"]
+layout_mode = 2
+horizontal_alignment = 1

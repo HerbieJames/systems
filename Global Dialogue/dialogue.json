@@ -1,0 +1,7 @@
+[gd_resource type="JSON" format=3 uid="uid://ctxhxd30mu4ti"]
+
+[resource]
+data = {
+"farewell": ["What fun we had here today. However, I'm afraid I must go...", "... Farewell!"],
+"greeting": ["Hello there! My name is global_dialogue_box...", "... I am here to display narrative information...", "...such as this zany interaction, ho ho!"]
+}
