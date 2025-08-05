@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://uk12b2hag22a"]
+
+[ext_resource type="Script" uid="uid://dex1i1km1jwek" path="res://Audio Manager/global_audio.gd" id="1_a0gk3"]
+[ext_resource type="AudioStream" uid="uid://dsypnhy1cnntd" path="res://Assets/Audio/letter-004.wav" id="2_gl4ah"]
+
+[node name="GlobalAudio" type="Node"]
+script = ExtResource("1_a0gk3")
+sound_data = Dictionary[String, AudioStream]({
+"ping": ExtResource("2_gl4ah")
+})
