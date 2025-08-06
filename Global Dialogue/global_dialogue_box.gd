@@ -5,6 +5,7 @@ extends MarginContainer
 @onready var timer_letter : Timer = $"letter-display"
 @onready var timer_hold   : Timer = $"hold-display"
 
+
 var text         : String = ""
 var letter_index : int    = 0
 var letter_time  : float  = 0.03
@@ -13,10 +14,12 @@ var punct_time   : float  = 0.20
 var hold_time    : float  = 1.75
 
 
+signal finished_writing()
 signal finished_displaying()
 
 
 func hold_display() -> void:
+	finished_writing.emit()
 	timer_hold.start(hold_time)
 
 
@@ -34,12 +37,10 @@ func display_letter() -> void:
 			timer_letter.start(space_time)
 		_:
 			timer_letter.start(letter_time)
-			GlobalAudio.wav_letter.random_pitch = randf_range(1, 1.2)
+			GlobalAudio.sound_data["letter"].random_pitch = randf_range(1, 1.2)
 			if text[letter_index] in ["a","e","i","o","u"]:
-				GlobalAudio.wav_letter.random_pitch = randf_range(1.2, 1.4)
-			GlobalAudio.play_sound("letter")
-	
-	print(text[letter_index])
+				GlobalAudio.sound_data["letter"].random_pitch = randf_range(1.2, 1.4)
+			GlobalAudio.create_sound("letter")
 
 
 func display_text(text_to_display : String) -> void:
@@ -51,7 +52,6 @@ func display_text(text_to_display : String) -> void:
 
 
 func _on_letterdisplay_timeout() -> void:
-	print("done")
 	display_letter()
 
 

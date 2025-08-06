@@ -23,8 +23,8 @@ GlobalDialogue="*res://Global Dialogue/GlobalDialogue.tscn"
 
 [display]
 
-window/size/viewport_width=1600
-window/size/viewport_height=900
+window/size/viewport_width=800
+window/size/viewport_height=600
 
 [rendering]
 
