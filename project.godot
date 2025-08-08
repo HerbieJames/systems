@@ -13,13 +13,12 @@ config_version=5
 config/name="Systems and Components"
 run/main_scene="uid://bodbvylwgggc7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalAudio="*res://Global Audio/GlobalAudio.tscn"
-GlobalUI="*res://Global UI/GlobalUI.tscn"
-GlobalDialogue="*res://Global Dialogue/GlobalDialogue.tscn"
+GlobalAudio="*res://Scenes/Global Audio/GlobalAudio.tscn"
+GlobalUI="*res://Scenes/Global UI/GlobalUI.tscn"
+GlobalDialogue="*res://Scenes/Global Dialogue/GlobalDialogue.tscn"
 
 [display]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c4mynan87lajo"]
 
-[ext_resource type="Script" uid="uid://c4yjlxpxfup7d" path="res://Global Dialogue/global_dialogue_box.gd" id="1_thd6a"]
+[ext_resource type="Script" uid="uid://c4yjlxpxfup7d" path="res://Scenes/Global Dialogue/global_dialogue_box.gd" id="1_thd6a"]
 
 [node name="GlobalDialogueBox" type="MarginContainer"]
 anchors_preset = 12

@@ -1,8 +1,11 @@
 extends Camera2D
 
 
-var mouse_input : Vector2
+var mouse_input : Vector2  = Vector2()
 
+
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event: InputEvent) ->void:
 	if (event is InputEventMouseMotion and

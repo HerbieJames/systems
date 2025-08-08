@@ -1,7 +1,7 @@
 extends Node
 
 
-@onready var text_box_scene = preload("res://Global Dialogue/GlobalDialogueBox.tscn")
+@onready var text_box_scene = preload("res://Scenes/Global Dialogue/GlobalDialogueBox.tscn")
 
 
 var dialogue_lines       : Array[String] = []
