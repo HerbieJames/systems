@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://uk12b2hag22a"]
+
+[ext_resource type="Script" uid="uid://dex1i1km1jwek" path="res://Scenes/Global Sound/global_sound.gd" id="1_66sp8"]
+[ext_resource type="AudioStream" uid="uid://b7xasjdguhwi" path="res://Assets/Audio/orbit-001.wav" id="2_x0afl"]
+[ext_resource type="AudioStream" uid="uid://c3g3owqjfjtf6" path="res://Assets/Audio/letter-003.wav" id="3_gxdff"]
+[ext_resource type="AudioStream" uid="uid://dsypnhy1cnntd" path="res://Assets/Audio/letter-004.wav" id="4_qds0p"]
+[ext_resource type="Script" uid="uid://bihmayh5adeb4" path="res://Scenes/Global Sound/Audio Channels/audio_channel.gd" id="5_x0afl"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ia41p"]
+streams_count = 1
+stream_0/stream = ExtResource("3_gxdff")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_612bd"]
+streams_count = 1
+stream_0/stream = ExtResource("4_qds0p")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x0afl"]
+streams_count = 1
+stream_0/stream = ExtResource("3_gxdff")
+
+[node name="GlobalSound" type="Node"]
+script = ExtResource("1_66sp8")
+sound_data = Dictionary[String, AudioStream]({
+"letter_spoken": SubResource("AudioStreamRandomizer_ia41p"),
+"letter_typed": SubResource("AudioStreamRandomizer_612bd"),
+"ping": ExtResource("2_x0afl")
+})
+
+[node name="Music" type="Node" parent="."]
+script = ExtResource("5_x0afl")
+metadata/_custom_type_script = "uid://bihmayh5adeb4"
+
+[node name="SFX" type="Node" parent="."]
+script = ExtResource("5_x0afl")
+sound_files = Dictionary[String, AudioStream]({
+"ping": ExtResource("2_x0afl")
+})
+metadata/_custom_type_script = "uid://bihmayh5adeb4"
+
+[node name="Dialogue" type="Node" parent="."]
+script = ExtResource("5_x0afl")
+sound_files = Dictionary[String, AudioStream]({
+" letter_spoken": SubResource("AudioStreamRandomizer_x0afl")
+})
+metadata/_custom_type_script = "uid://bihmayh5adeb4"

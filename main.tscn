@@ -7,33 +7,127 @@
 script = ExtResource("1_ig7tw")
 
 [node name="EscapeableCamera" parent="." instance=ExtResource("2_0xm2m")]
+offset = Vector2(400, 300)
+enabled = false
 
 [node name="SceneUI" type="CanvasLayer" parent="."]
 
+[node name="GLOBAL AUDIO" type="Label" parent="SceneUI"]
+anchors_preset = -1
+anchor_right = 0.56
+anchor_bottom = 0.065
+text = "Global Audio"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
 [node name="Button" type="Button" parent="SceneUI"]
-offset_right = 397.0
-offset_bottom = 31.0
+anchors_preset = -1
+anchor_top = 0.067
+anchor_right = 0.496
+anchor_bottom = 0.117
+offset_top = -1.2
+offset_right = 0.199982
+offset_bottom = -0.200005
 text = "latest_ping = AudioManager.create_sounds(\"ping\")"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="SceneUI"]
-offset_top = 40.0
-offset_right = 297.0
-offset_bottom = 71.0
-text = "AudioManager.destroy_sound(\"ping\")"
+anchors_preset = -1
+anchor_top = 0.133
+anchor_right = 0.381
+anchor_bottom = 0.183
+offset_top = -0.800003
+offset_right = -7.80002
+offset_bottom = 0.199989
+text = "AudioManager.destroy_sounds(\"ping\")"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="SceneUI"]
-offset_top = 80.0
-offset_right = 194.0
-offset_bottom = 111.0
+anchors_preset = -1
+anchor_top = 0.198
+anchor_right = 0.242
+anchor_bottom = 0.253
+offset_top = 0.199989
+offset_right = 0.399994
+offset_bottom = -1.80002
 text = "latest_ping.queue_free()"
+metadata/_edit_use_anchors_ = true
+
+[node name="ESCAPEABLE CAMERA" type="Label" parent="SceneUI"]
+anchors_preset = -1
+anchor_left = 0.63
+anchor_right = 1.0
+anchor_bottom = 0.053
+offset_left = -3.05176e-05
+offset_bottom = 7.2
+text = "Escapeable Camera"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="SceneUI"]
-offset_top = 136.0
-offset_right = 527.0
-offset_bottom = 168.0
-text = "GlobalDialogue.start_dialogue(GlobalDialogue.dialogue[\"greeting\"])"
+anchors_preset = -1
+anchor_left = 0.63
+anchor_top = 0.067
+anchor_right = 1.0
+anchor_bottom = 0.117
+offset_left = -3.05176e-05
+offset_top = -1.2
+offset_bottom = 0.799995
+text = "toggle EscapeableCamera.enabled"
+metadata/_edit_use_anchors_ = true
+
+[node name="GLOBAL EXPOSITION" type="Label" parent="SceneUI"]
+anchors_preset = -1
+anchor_top = 0.253
+anchor_right = 0.56
+anchor_bottom = 0.318
+offset_top = 45.2
+offset_bottom = 45.2
+text = "Global Exposition"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button5" type="Button" parent="SceneUI"]
+anchors_preset = -1
+anchor_top = 0.32
+anchor_right = 0.58
+anchor_bottom = 0.373
+offset_top = 44.0
+offset_right = -3.05176e-05
+offset_bottom = 44.2
+text = "GlobalExpo.start_expo([\"x aa..hah\",\"be fw?ee\"], \"dialogue\")"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button6" type="Button" parent="SceneUI"]
+anchors_preset = -1
+anchor_top = 0.387
+anchor_right = 0.57
+anchor_bottom = 0.44
+offset_top = 44.8
+offset_right = -3.05176e-05
+offset_bottom = 44.9999
+text = "GlobalExpo.start_expo([\"The Menu Screen\"], \"location\")"
+
+[node name="Button7" type="Button" parent="SceneUI"]
+anchors_preset = -1
+anchor_top = 0.267
+anchor_right = 0.39
+anchor_bottom = 0.32
+offset_top = -0.200012
+offset_bottom = -1.00002
+disabled = true
+text = "AudioManager.create_sounds(\"drone\")"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="SceneUI/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SceneUI/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="SceneUI/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="SceneUI/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="SceneUI/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="SceneUI/Button6" to="." method="_on_button_6_pressed"]

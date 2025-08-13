@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfwpnxdtofj7s"]
+
+[ext_resource type="Script" uid="uid://bwibetwrxlpxi" path="res://Scenes/Global Exposition/global_expo.gd" id="1_ypg3r"]
+[ext_resource type="Script" uid="uid://w6kv22n7yu60" path="res://Scenes/Global Exposition/screen_space.gd" id="2_ppelq"]
+
+[node name="GlobalDialogue" type="Node"]
+script = ExtResource("1_ypg3r")
+
+[node name="Dialogue" type="Node" parent="."]
+script = ExtResource("2_ppelq")
+metadata/_custom_type_script = "uid://w6kv22n7yu60"
+
+[node name="Location" type="Node" parent="."]
+script = ExtResource("2_ppelq")
+metadata/_custom_type_script = "uid://w6kv22n7yu60"

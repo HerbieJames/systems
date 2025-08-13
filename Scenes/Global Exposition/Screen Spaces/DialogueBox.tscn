@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4mynan87lajo"]
+
+[ext_resource type="Script" uid="uid://c4yjlxpxfup7d" path="res://Scenes/Global Exposition/Screen Spaces/dialogue_box.gd" id="1_pt4au"]
+
+[node name="GlobalDialogueBox" type="MarginContainer"]
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(400, 30)
+size_flags_vertical = 8
+script = ExtResource("1_pt4au")
+
+[node name="letter-display" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
+
+[node name="hold-display" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
+
+[node name="box" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="margin-for-text" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="text" type="Label" parent="margin-for-text"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[connection signal="timeout" from="letter-display" to="." method="_on_letterdisplay_timeout"]
+[connection signal="timeout" from="hold-display" to="." method="_on_holddisplay_timeout"]

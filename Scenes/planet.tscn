@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu74hbc3it2v7"]
+
+[ext_resource type="PackedScene" uid="uid://dmp4ama6ecb0t" path="res://Assets/Models/photobox.blend" id="1_xehyc"]
+
+[node name="photobox" instance=ExtResource("1_xehyc")]

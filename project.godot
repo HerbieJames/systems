@@ -16,9 +16,10 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
 
-GlobalAudio="*res://Scenes/Global Audio/GlobalAudio.tscn"
+GlobalSound="*res://Scenes/Global Sound/GlobalSound.tscn"
 GlobalUI="*res://Scenes/Global UI/GlobalUI.tscn"
-GlobalDialogue="*res://Scenes/Global Dialogue/GlobalDialogue.tscn"
+GlobalExpo="*res://Scenes/Global Exposition/GlobalExpo.tscn"
+H="*res://Scripts/libie.gd"
 
 [display]
 

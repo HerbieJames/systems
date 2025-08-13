@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfwpnxdtofj7s"]
-
-[ext_resource type="Script" uid="uid://5ojxubhs2rie" path="res://Scenes/Global Dialogue/global_dialogue.gd" id="1_ipq64"]
-
-[node name="GlobalDialogue" type="Node"]
-script = ExtResource("1_ipq64")
