@@ -14,6 +14,10 @@ config/name="Systems and Components"
 run/main_scene="uid://bodbvylwgggc7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 GlobalSound="*res://Scenes/Global Sound/GlobalSound.tscn"
@@ -25,6 +29,10 @@ H="*res://Scripts/libie.gd"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
+
+[filesystem]
+
+import/blender/enabled=false
 
 [rendering]
 

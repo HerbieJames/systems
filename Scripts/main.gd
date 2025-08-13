@@ -19,8 +19,7 @@ func _on_button_3_pressed() -> void:
 
 # ESCAPEABLE CAMERA
 func _on_button_4_pressed() -> void:
-	if $EscapeableCamera.enabled: $EscapeableCamera.enabled = false
-	else                        : $EscapeableCamera.enabled = true
+	$EscapeableCamera.toggle()
 
 
 # GLOBAL EXPOSITION

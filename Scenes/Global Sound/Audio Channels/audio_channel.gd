@@ -16,9 +16,16 @@ func remove_sound(instance: AudioStreamPlayer) -> void:
 ## Play a sound by it's key. Returns the instance node.
 ##
 ## [param sound] references an AudioStream in [member sound_files].
-func create_sound(sound: String) -> AudioStreamPlayer:
+func create_sound(sound: String, sub_bus: String = "") -> AudioStreamPlayer:
+	var bus = self.name + "_" + sub_bus if sub_bus else self.name
 	var instance = AudioStreamPlayer.new()
 	var i : int = 1
+	
+	## !! On load, all AudioStreamPlayer Nodes are set to the Master bus !!
+	instance.bus = StringName(bus)
+	## THIS SEEMS LIKE A BUG
+	
+	
 	if (sound_files.has(sound)): instance.stream = sound_files[sound]
 	instance.finished.connect(remove_sound.bind(instance))
 	if (!audio_stream_players.has(sound)): audio_stream_players[sound] = [instance]
@@ -32,12 +39,18 @@ func create_sound(sound: String) -> AudioStreamPlayer:
 
 
 ## Destroy sound by some key, or all of them if no key is provided.
-func destroy_sounds(sound: String) -> void:
-	if (!sound):
+##
+## [param whitelist] destroys all sounds *but* the specified sound if true.
+func destroy_sounds(sound: String, whitelist: bool = false) -> void:
+	if (!sound or (!audio_stream_players.has(sound) and whitelist)):
 		for instance in get_children(): 
 			instance.queue_free()
 	else: 
 		if (!audio_stream_players.has(sound)): return
-		for instance in audio_stream_players[sound]: 
-			if instance: instance.queue_free()
-		audio_stream_players[sound].clear()
+		if whitelist:
+			for instance in get_children(): 
+				if (!audio_stream_players[sound].has(instance)): instance.queue_free()
+		else:
+			for instance in audio_stream_players[sound]: 
+				if instance: instance.queue_free()
+			audio_stream_players[sound].clear()

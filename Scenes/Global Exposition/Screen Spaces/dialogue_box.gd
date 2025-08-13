@@ -42,6 +42,7 @@ func display_letter() -> void:
 				GlobalSound.dialogue.sound_files["letter_spoken"].random_pitch = randf_range(1, 1.2)
 				if text[letter_index] in ["a","e","i","o","u"]:
 					GlobalSound.dialogue.sound_files["letter_spoken"].random_pitch = randf_range(1.2, 1.4)
+			else: print("sound missing")
 			GlobalSound.dialogue.create_sound("letter_spoken")
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://uk12b2hag22a"]
+[gd_scene load_steps=10 format=3 uid="uid://uk12b2hag22a"]
 
 [ext_resource type="Script" uid="uid://dex1i1km1jwek" path="res://Scenes/Global Sound/global_sound.gd" id="1_66sp8"]
 [ext_resource type="AudioStream" uid="uid://b7xasjdguhwi" path="res://Assets/Audio/orbit-001.wav" id="2_x0afl"]
@@ -14,9 +14,13 @@ stream_0/stream = ExtResource("3_gxdff")
 streams_count = 1
 stream_0/stream = ExtResource("4_qds0p")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gxdff"]
+streams_count = 1
+stream_0/stream = ExtResource("4_qds0p")
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x0afl"]
 streams_count = 1
-stream_0/stream = ExtResource("3_gxdff")
+stream_0/stream = ExtResource("4_qds0p")
 
 [node name="GlobalSound" type="Node"]
 script = ExtResource("1_66sp8")
@@ -33,6 +37,7 @@ metadata/_custom_type_script = "uid://bihmayh5adeb4"
 [node name="SFX" type="Node" parent="."]
 script = ExtResource("5_x0afl")
 sound_files = Dictionary[String, AudioStream]({
+"letter_typed": SubResource("AudioStreamRandomizer_gxdff"),
 "ping": ExtResource("2_x0afl")
 })
 metadata/_custom_type_script = "uid://bihmayh5adeb4"
@@ -40,6 +45,6 @@ metadata/_custom_type_script = "uid://bihmayh5adeb4"
 [node name="Dialogue" type="Node" parent="."]
 script = ExtResource("5_x0afl")
 sound_files = Dictionary[String, AudioStream]({
-" letter_spoken": SubResource("AudioStreamRandomizer_x0afl")
+"letter_spoken": SubResource("AudioStreamRandomizer_x0afl")
 })
 metadata/_custom_type_script = "uid://bihmayh5adeb4"

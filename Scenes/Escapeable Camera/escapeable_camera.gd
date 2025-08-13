@@ -9,6 +9,15 @@ func _ready() -> void:
 	pass
 
 
+func toggle() -> void:
+	if enabled:
+		enabled = false
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		enabled = true
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
 func _input(event: InputEvent) ->void:
 	if (event is InputEventMouseMotion and
 	Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and
