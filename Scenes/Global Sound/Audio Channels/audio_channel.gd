@@ -17,15 +17,12 @@ func remove_sound(instance: AudioStreamPlayer) -> void:
 ##
 ## [param sound] references an AudioStream in [member sound_files].
 func create_sound(sound: String, sub_bus: String = "") -> AudioStreamPlayer:
-	var bus = self.name + "_" + sub_bus if sub_bus else self.name
+	var bus = str(self.name + "_" + sub_bus) if sub_bus else self.name
 	var instance = AudioStreamPlayer.new()
 	var i : int = 1
-	
-	## !! On load, all AudioStreamPlayer Nodes are set to the Master bus !!
+	# !! On load, all AudioStreamPlayer Nodes in this project are set to Master bus !!
 	instance.bus = StringName(bus)
-	## THIS SEEMS LIKE A BUG
-	
-	
+	# THIS APPEARS TO BE A BUG WITH THIS PROJECT ONLY. WORKS FINE EXTERNALLY
 	if (sound_files.has(sound)): instance.stream = sound_files[sound]
 	instance.finished.connect(remove_sound.bind(instance))
 	if (!audio_stream_players.has(sound)): audio_stream_players[sound] = [instance]

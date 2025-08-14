@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bodbvylwgggc7"]
+[gd_scene load_steps=4 format=3 uid="uid://bodbvylwgggc7"]
 
 [ext_resource type="Script" uid="uid://c3ryej6pm0i27" path="res://Scripts/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://2hbi86dps2jg" path="res://Scenes/Escapeable Camera/escapeable_camera.tscn" id="2_0xm2m"]
+[ext_resource type="AudioStream" uid="uid://ba4mpn1kscfya" path="res://Assets/Audio/[Steely Dan] Home At Last.mp3" id="3_h2yge"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
@@ -124,6 +125,11 @@ offset_bottom = -1.00002
 disabled = true
 text = "AudioManager.create_sounds(\"drone\")"
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_h2yge")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="SceneUI/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SceneUI/Button2" to="." method="_on_button_2_pressed"]
