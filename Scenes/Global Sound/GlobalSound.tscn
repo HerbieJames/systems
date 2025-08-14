@@ -1,50 +1,71 @@
-[gd_scene load_steps=10 format=3 uid="uid://uk12b2hag22a"]
+[gd_scene load_steps=12 format=3 uid="uid://uk12b2hag22a"]
 
 [ext_resource type="Script" uid="uid://dex1i1km1jwek" path="res://Scenes/Global Sound/global_sound.gd" id="1_66sp8"]
-[ext_resource type="AudioStream" uid="uid://b7xasjdguhwi" path="res://Assets/Audio/orbit-001.wav" id="2_x0afl"]
-[ext_resource type="AudioStream" uid="uid://c3g3owqjfjtf6" path="res://Assets/Audio/letter-003.wav" id="3_gxdff"]
-[ext_resource type="AudioStream" uid="uid://dsypnhy1cnntd" path="res://Assets/Audio/letter-004.wav" id="4_qds0p"]
-[ext_resource type="Script" uid="uid://bihmayh5adeb4" path="res://Scenes/Global Sound/Audio Channels/audio_channel.gd" id="5_x0afl"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ia41p"]
-streams_count = 1
-stream_0/stream = ExtResource("3_gxdff")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_612bd"]
-streams_count = 1
-stream_0/stream = ExtResource("4_qds0p")
+[ext_resource type="AudioStream" uid="uid://b7xasjdguhwi" path="res://Resources/SFX/orbit-001.wav" id="2_x0afl"]
+[ext_resource type="AudioStream" uid="uid://dsypnhy1cnntd" path="res://Resources/SFX/letter-004.wav" id="4_qds0p"]
+[ext_resource type="Script" uid="uid://csnda78lrxspr" path="res://Scenes/Global Sound/ambient_music.gd" id="5_gxdff"]
+[ext_resource type="Script" uid="uid://bihmayh5adeb4" path="res://Scenes/Global Sound/sfx_channel.gd" id="5_x0afl"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gxdff"]
 streams_count = 1
 stream_0/stream = ExtResource("4_qds0p")
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x0afl"]
-streams_count = 1
-stream_0/stream = ExtResource("4_qds0p")
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_66sp8"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_x0afl"]
+shuffle = true
+stream_count = 1
+stream_0 = SubResource("AudioStreamSynchronized_66sp8")
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_gxdff"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_vlme2"]
+shuffle = true
+stream_count = 1
+stream_0 = SubResource("AudioStreamSynchronized_gxdff")
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_5lj0h"]
+clip_count = 2
+clip_0/name = &"MenuScreen"
+clip_0/stream = SubResource("AudioStreamPlaylist_x0afl")
+clip_0/auto_advance = 0
+clip_1/name = &"NarrativeIntro"
+clip_1/stream = SubResource("AudioStreamPlaylist_vlme2")
+clip_1/auto_advance = 0
+_transitions = {
+Vector2i(0, -1): {
+"fade_beats": 1.0,
+"fade_mode": 2,
+"from_time": 0,
+"to_time": 1
+}
+}
 
 [node name="GlobalSound" type="Node"]
 script = ExtResource("1_66sp8")
-sound_data = Dictionary[String, AudioStream]({
-"letter_spoken": SubResource("AudioStreamRandomizer_ia41p"),
-"letter_typed": SubResource("AudioStreamRandomizer_612bd"),
-"ping": ExtResource("2_x0afl")
-})
 
-[node name="Music" type="Node" parent="."]
+[node name="Dialogue" type="Node" parent="."]
 script = ExtResource("5_x0afl")
+channel_description = "Dialogue for characters in narrative menu scenes, and in world scenes; for all spoken dialogue. (( review this design choice ))."
 metadata/_custom_type_script = "uid://bihmayh5adeb4"
 
 [node name="SFX" type="Node" parent="."]
 script = ExtResource("5_x0afl")
+channel_description = "SFX for UI, Player, and World audio. All sounds made here are designated as aforementioned to the specifications of user settings accomidations."
 sound_files = Dictionary[String, AudioStream]({
 "letter_typed": SubResource("AudioStreamRandomizer_gxdff"),
 "ping": ExtResource("2_x0afl")
 })
 metadata/_custom_type_script = "uid://bihmayh5adeb4"
 
-[node name="Dialogue" type="Node" parent="."]
+[node name="Music" type="Node" parent="."]
 script = ExtResource("5_x0afl")
-sound_files = Dictionary[String, AudioStream]({
-"letter_spoken": SubResource("AudioStreamRandomizer_x0afl")
-})
+channel_description = "Stunt Music for responsive musical features, and music timed with in game occurence."
 metadata/_custom_type_script = "uid://bihmayh5adeb4"
+
+[node name="AmbientMusic" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamInteractive_5lj0h")
+max_polyphony = 32
+bus = &"Music"
+script = ExtResource("5_gxdff")
+channel_description = "Ambient Music for score designated by game attitude, such as excited or wanderlustuous. Not for strongly timed occurences."

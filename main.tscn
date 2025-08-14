@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3ryej6pm0i27" path="res://Scripts/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://2hbi86dps2jg" path="res://Scenes/Escapeable Camera/escapeable_camera.tscn" id="2_0xm2m"]
-[ext_resource type="AudioStream" uid="uid://ba4mpn1kscfya" path="res://Assets/Audio/[Steely Dan] Home At Last.mp3" id="3_h2yge"]
+[ext_resource type="AudioStream" uid="uid://ba4mpn1kscfya" path="res://Resources/SFX/[Steely Dan] Home At Last.mp3" id="3_h2yge"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
