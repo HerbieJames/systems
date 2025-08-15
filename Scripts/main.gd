@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 var latest_ping
@@ -6,11 +6,11 @@ var latest_ping
 
 # GLOBAL AUDIO
 func _on_button_pressed() -> void:
-	latest_ping = GlobalSound.sfx.create_sound("ping")
+	latest_ping = GlobalSound.sfx.world.create_sound("ping")
 
 
 func _on_button_2_pressed() -> void:
-	GlobalSound.sfx.destroy_sounds("ping")
+	GlobalSound.sfx.world.destroy_sounds("ping")
 
 
 func _on_button_3_pressed() -> void:

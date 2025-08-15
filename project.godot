@@ -20,10 +20,8 @@ buses/default_bus_layout=""
 
 [autoload]
 
-GlobalSound="*res://Scenes/Global Sound/GlobalSound.tscn"
-GlobalUI="*res://Scenes/Global UI/GlobalUI.tscn"
-GlobalExpo="*res://Scenes/Global Exposition/GlobalExpo.tscn"
-H="*res://Scripts/libie.gd"
+GlobalSound="*res://Scenes/Systems/Global Sound/GlobalSound.tscn"
+GlobalExpo="*res://Scenes/Systems/Global Exposition/GlobalExpo.tscn"
 
 [display]
 

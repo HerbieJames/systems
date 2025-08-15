@@ -1,4 +1,5 @@
-class_name SFXChannel ## needs to split into 2D and 3D
+@icon("res://Scenes/Systems/Global Sound/sound_channel_icon.svg")
+class_name SoundChannel ## needs to split into 2D and 3D
 extends Node
 
 
@@ -18,7 +19,7 @@ func remove_sound(instance: AudioStreamPlayer) -> void:
 ##
 ## [param sound] references an AudioStream in [member sound_files].
 func create_sound(sound: String, sub_bus: String = "") -> AudioStreamPlayer:
-	var bus = str(self.name + "_" + sub_bus) if sub_bus else self.name
+	var bus = self.name + "_" + sub_bus if sub_bus else self.name
 	var instance = AudioStreamPlayer.new()
 	var i : int = 1
 	# !! On load, all AudioStreamPlayer Nodes in this project are set to Master bus !!

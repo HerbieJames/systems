@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ba4mpn1kscfya"
+path="res://.godot/imported/[Steely Dan] Home At Last.mp3-8406a13b181fea828b5a56ccb9e88521.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/[Steely Dan] Home At Last.mp3"
+dest_files=["res://.godot/imported/[Steely Dan] Home At Last.mp3-8406a13b181fea828b5a56ccb9e88521.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

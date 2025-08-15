@@ -29,9 +29,9 @@ func display_letter() -> void:
 		return
 	timer_letter.start(letter_time)
 	
-	if GlobalSound.sfx.sound_files.has("letter_typed"):
-		GlobalSound.sfx.sound_files["letter_typed"].random_pitch = randf_range(0.8, 1)
-	GlobalSound.sfx.create_sound("letter_typed")
+	if GlobalSound.sfx.ui.sound_files.has("letter_typed"):
+		GlobalSound.sfx.ui.sound_files["letter_typed"].random_pitch = randf_range(0.8, 1)
+	GlobalSound.sfx.ui.create_sound("letter_typed", "UI")
 
 
 func display_text(text_to_display : String) -> void:

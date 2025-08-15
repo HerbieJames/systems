@@ -1,15 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnql73gq6aghe"]
+[gd_scene load_steps=2 format=3 uid="uid://c4mynan87lajo"]
 
-[ext_resource type="Script" uid="uid://m71ay838qwlu" path="res://Scenes/Global Exposition/Screen Spaces/location_box.gd" id="1_hyr17"]
+[ext_resource type="Script" uid="uid://c4yjlxpxfup7d" path="res://Scenes/Systems/Global Exposition/Screen Spaces/dialogue_box.gd" id="1_pt4au"]
 
-[node name="LocationBox" type="MarginContainer"]
+[node name="GlobalDialogueBox" type="MarginContainer"]
 anchors_preset = -1
-anchor_top = 0.213
+anchor_top = 0.9
 anchor_right = 1.0
-anchor_bottom = 0.32
-offset_top = 0.199989
-offset_bottom = -1.52588e-05
-script = ExtResource("1_hyr17")
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(400, 30)
+size_flags_vertical = 8
+script = ExtResource("1_pt4au")
 
 [node name="letter-display" type="Timer" parent="."]
 one_shot = true
@@ -29,7 +31,6 @@ layout_mode = 2
 [node name="text" type="Label" parent="margin-for-text"]
 layout_mode = 2
 horizontal_alignment = 1
-uppercase = true
 
 [connection signal="timeout" from="letter-display" to="." method="_on_letterdisplay_timeout"]
 [connection signal="timeout" from="hold-display" to="." method="_on_holddisplay_timeout"]

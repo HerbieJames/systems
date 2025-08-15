@@ -1,15 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bodbvylwgggc7"]
+[gd_scene load_steps=3 format=3 uid="uid://bodbvylwgggc7"]
 
-[ext_resource type="Script" uid="uid://c3ryej6pm0i27" path="res://Scripts/main.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://2hbi86dps2jg" path="res://Scenes/Escapeable Camera/escapeable_camera.tscn" id="2_0xm2m"]
-[ext_resource type="AudioStream" uid="uid://ba4mpn1kscfya" path="res://Resources/SFX/[Steely Dan] Home At Last.mp3" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://c3ryej6pm0i27" path="res://Scripts/main.gd" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://2hbi86dps2jg" path="res://Scenes/Systems/Escapeable Camera/escapeable_camera.tscn" id="2_8gbba"]
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_ig7tw")
-
-[node name="EscapeableCamera" parent="." instance=ExtResource("2_0xm2m")]
-offset = Vector2(400, 300)
-enabled = false
+[node name="MenuScreen" type="Node"]
+script = ExtResource("1_bo1nx")
 
 [node name="SceneUI" type="CanvasLayer" parent="."]
 
@@ -31,7 +26,7 @@ anchor_bottom = 0.117
 offset_top = -1.2
 offset_right = 0.199982
 offset_bottom = -0.200005
-text = "latest_ping = AudioManager.create_sounds(\"ping\")"
+text = "latest_ping = GlobalSound.sfx.world.create_sound(\"ping\")"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="SceneUI"]
@@ -42,7 +37,7 @@ anchor_bottom = 0.183
 offset_top = -0.800003
 offset_right = -7.80002
 offset_bottom = 0.199989
-text = "AudioManager.destroy_sounds(\"ping\")"
+text = "GlobalSound.sfx.world.destroy_sounds(\"ping\")"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="SceneUI"]
@@ -126,10 +121,9 @@ disabled = true
 text = "AudioManager.create_sounds(\"drone\")"
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_h2yge")
-autoplay = true
-bus = &"Music"
+[node name="EscapeableCamera" parent="." instance=ExtResource("2_8gbba")]
+offset = Vector2(400, 300)
+enabled = false
 
 [connection signal="pressed" from="SceneUI/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SceneUI/Button2" to="." method="_on_button_2_pressed"]
