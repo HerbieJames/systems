@@ -8,6 +8,7 @@
 [node name="DynamicCameraIsoDemo" type="Node3D"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("1_qb5ho")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
@@ -16,4 +17,14 @@ shape = SubResource("SphereShape3D_qb5ho")
 [node name="CSGSphere3D" type="CSGSphere3D" parent="CharacterBody3D"]
 
 [node name="DynamicCameraIso" parent="." instance=ExtResource("2_rnru0")]
-transform = Transform3D(0.707107, -0.577096, 0.408607, 0, 0.577858, 0.816138, -0.707107, -0.577096, 0.408607, 0, 0, 0)
+target_path = NodePath("../CharacterBody3D")
+move_margin = 9.8
+ease_move_rate = 0.5
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(10, 1, 10)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.90687, 0)
+omni_range = 11.803
