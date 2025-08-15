@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c64t8dev3hlc0"]
+
+[ext_resource type="Script" uid="uid://c61xqd8ypxdgc" path="res://Scenes/Systems/Escapeable Camera/escapeable_camera_2d.gd" id="1_y3b8u"]
+
+[node name="EscapeableCamera2D" type="Camera2D"]
+offset = Vector2(800, 450)
+script = ExtResource("1_y3b8u")

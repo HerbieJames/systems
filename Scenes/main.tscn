@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bodbvylwgggc7"]
 
 [ext_resource type="Script" uid="uid://c3ryej6pm0i27" path="res://Scripts/main.gd" id="1_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://2hbi86dps2jg" path="res://Scenes/Systems/Escapeable Camera/escapeable_camera.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://2hbi86dps2jg" path="res://Scenes/Systems/Escapeable Camera/escapeable_camera_2d.tscn" id="2_8gbba"]
 
 [node name="MenuScreen" type="Node"]
 script = ExtResource("1_bo1nx")
