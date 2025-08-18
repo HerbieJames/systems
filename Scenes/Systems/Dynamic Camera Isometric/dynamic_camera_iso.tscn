@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bdlsewogf2gnd" path="res://Scenes/Systems/Dynamic Camera Isometric/dynamic_camera_iso.gd" id="1_oopre"]
 
 [node name="DynamicCameraIso" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.577857, 0.816138, 0, -0.816137, 0.577858, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_oopre")
 
 [node name="Camera3D" type="Camera3D" parent="."]

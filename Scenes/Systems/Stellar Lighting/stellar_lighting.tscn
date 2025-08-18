@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://du323ayjhqidj"]
+
+[ext_resource type="Script" uid="uid://c8h5urncrs4r1" path="res://Scenes/Systems/Stellar Lighting/stellar_lighting.gd" id="1_q1eky"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1eky"]
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ymjgj"]
+material = SubResource("StandardMaterial3D_q1eky")
+radius = 10.0
+height = 20.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymjgj"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4ik87"]
+material = SubResource("StandardMaterial3D_ymjgj")
+top_radius = 20.0
+bottom_radius = 20.0
+height = 0.1
+cap_bottom = false
+
+[node name="StellarLighting" type="DirectionalLight3D"]
+directional_shadow_mode = 0
+script = ExtResource("1_q1eky")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ymjgj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_4ik87")

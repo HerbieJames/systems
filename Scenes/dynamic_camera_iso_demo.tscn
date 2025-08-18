@@ -1,19 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://b85x647or7c3v"]
+[gd_scene load_steps=4 format=3 uid="uid://b85x647or7c3v"]
 
 [ext_resource type="PackedScene" uid="uid://dncaa31y02y3q" path="res://Scenes/Systems/Radial Character/Ship.tscn" id="1_rnru0"]
 [ext_resource type="PackedScene" uid="uid://bq7osncnhkc4f" path="res://Scenes/Systems/Dynamic Camera Isometric/dynamic_camera_iso.tscn" id="2_rnru0"]
+[ext_resource type="PackedScene" uid="uid://du323ayjhqidj" path="res://Scenes/Systems/Stellar Lighting/stellar_lighting.tscn" id="3_gle5k"]
 
 [node name="DynamicCameraIsoDemo" type="Node3D"]
 
 [node name="Ship" parent="." instance=ExtResource("1_rnru0")]
+max_speed_sprint = 20.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 size = Vector3(10, 1, 10)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.90687, 0)
-omni_range = 11.803
 
 [node name="DynamicCameraIso" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_rnru0")]
 target = NodePath("../Ship")
+angle_of_ascension = 35.3
+size_target = 40.0
+size_margin = 20.0
+ease_move_margin = 7.5
+ease_move_rate = 3.0
+ease_zoom_rate = 7.0
+
+[node name="StellarLighting" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_gle5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 100)
+target = NodePath("../Ship")
+height = 5

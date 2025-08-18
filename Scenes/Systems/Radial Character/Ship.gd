@@ -41,7 +41,6 @@ func move_layer_up_or_down(layer_dir: int) -> void:
 	match layer:
 		0: layer = layer_dir
 		a: layer = 0
-	print("layer:", layer)
 
 
 func adjust_by_instruction(delta: float) -> void:
