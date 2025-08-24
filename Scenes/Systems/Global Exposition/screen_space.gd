@@ -9,7 +9,7 @@ extends Node
 ## [param text_box] is the current instance of the design, if any.
 
 
-var expo_lines         : Array = []
+var expo_lines         : Array[String] = []
 var current_line_index : int           = 0
 var is_expo_active     : bool          = false
 var text_box_scene     : PackedScene

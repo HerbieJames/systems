@@ -122,8 +122,6 @@ text = "AudioManager.create_sounds(\"drone\")"
 metadata/_edit_use_anchors_ = true
 
 [node name="EscapeableCamera" parent="." instance=ExtResource("2_8gbba")]
-offset = Vector2(400, 300)
-enabled = false
 
 [connection signal="pressed" from="SceneUI/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SceneUI/Button2" to="." method="_on_button_2_pressed"]
